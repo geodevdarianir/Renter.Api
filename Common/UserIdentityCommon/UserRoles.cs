@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Common.UserIdentityCommon
 {
+    // https://devdarianigeo.atlassian.net/browse/RG-8
     public class UserRoles
     {
         public const string Client = "Client"; // Auftraggeber

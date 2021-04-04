@@ -11,11 +11,12 @@ namespace Repository.Repository
         public Guid Id { get; set; }
     }
 
+    // https://devdarianigeo.atlassian.net/browse/RG-10
     public interface IRepository<TEntity> where TEntity : class, IEntity
     {
         IQueryable<TEntity> GetAll();
 
-        Task<TEntity> GetById(Guid id);
+        Task<TEntity> GetByIdAsync(Guid id);
 
         Task<TEntity> CreateAsync(TEntity entity);
 
