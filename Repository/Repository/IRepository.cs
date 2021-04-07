@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    public interface IEntity
-    {
-        public Guid Id { get; set; }
-    }
+   
 
     // https://devdarianigeo.atlassian.net/browse/RG-10
     public interface IRepository<TEntity> where TEntity : class, IEntity
