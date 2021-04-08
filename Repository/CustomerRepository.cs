@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class CustomerRepository : Repository<Customer>, ICustomerRepository
+    public class CustomerRepository : Repository<User>, ICustomerRepository
     {
         public CustomerRepository(ApplicationDbContext context) : base(context)
         {

@@ -8,16 +8,14 @@ using System.Text;
 
 namespace Entities.Context
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User, Role, Guid>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
 
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
-        public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
