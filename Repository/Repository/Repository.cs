@@ -62,6 +62,7 @@ namespace Repository.Repository
         // https://devdarianigeo.atlassian.net/browse/RG-20
         public async Task<TEntity> GetByIdAsync(Guid id)
         {
+            
             return await _context.Set<TEntity>()
                   .AsNoTracking()
                   .FirstOrDefaultAsync(e => e.Id == id);

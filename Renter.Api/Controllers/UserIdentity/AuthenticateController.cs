@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Services.UserIdentity;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -15,7 +14,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Renter.Api.Controllers.UserIdentity
 {
@@ -27,7 +25,7 @@ namespace Renter.Api.Controllers.UserIdentity
         private readonly RoleManager<Role> _roleManager;
         private readonly JwtSettings _jwtSettings;
         private readonly IMapper _mapper;
-        public AuthenticateController(IMapper mapper, UserManager<User> userManager,  RoleManager<Role> roleManager, IOptionsSnapshot<JwtSettings> jwtSettings)
+        public AuthenticateController(IMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager, IOptionsSnapshot<JwtSettings> jwtSettings)
         {
             _mapper = mapper;
             _userManager = userManager;
@@ -44,7 +42,7 @@ namespace Renter.Api.Controllers.UserIdentity
 
             if (userCreateResult.Succeeded)
             {
-                return Created(string.Empty, string.Empty);
+                return Ok(new { message = "New user created!" });
             }
 
             return Problem(userCreateResult.Errors.First().Description, null, 500);

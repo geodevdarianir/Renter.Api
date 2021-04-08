@@ -11,7 +11,8 @@ namespace Entities.Models.Users
     {
         public override string Name
         {
-            get => base.Name; set
+            get { return base.Name; }
+            set
             {
                 var props = typeof(UserRoles).GetFields();
                 if (props.Any(p => p.Name == value))
@@ -20,7 +21,8 @@ namespace Entities.Models.Users
                 }
                 else
                 {
-                    throw new Exception("Role is only Admin, Client or Contractor!");
+                    throw new EntityError<Role>(this, "Role is Admin, Client or Contractor!");
+
                 }
             }
         }
