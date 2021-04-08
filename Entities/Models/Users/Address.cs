@@ -13,9 +13,10 @@ namespace Entities.Models.Users
         public string Street { get; set; }
         [Required(ErrorMessage = "Country is required")]
         public string Country { get; set; }
-        [Required(ErrorMessage = "ZipCode is required")]
+        //[Required(ErrorMessage = "ZipCode is required")]
         public string ZipCode { get; set; }
         [Required(ErrorMessage = "City is required")]
         public string City { get; set; }
+
     }
 }

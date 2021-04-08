@@ -1,0 +1,8 @@
+Microsoft.EntityFrameworkCore.Tools = in API => in Entities
+Microsoft.EntityFrameworkCore.Design = in Entities
+Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore => in ENtities
+Microsoft.EntityFrameworkCore.SqlServer => in Entities
+
+Befehle: 
+	Add-Migration InitialCreate -Context UserIdentityDbContext -OutputDir Migrations\SqlServerMigrations
+	update-database
